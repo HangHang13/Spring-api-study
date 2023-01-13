@@ -3,6 +3,10 @@
 server:
   port: 8080
 
+
+logging:
+  level:
+    root: debug #???? info? trace? debug??
 #
 #spring:
 #  datasource:
