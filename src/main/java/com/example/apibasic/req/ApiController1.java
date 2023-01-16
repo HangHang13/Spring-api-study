@@ -18,10 +18,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/say")
 public class ApiController1 {
 
+
     //요청을 받아서 처리할 메서드
-
-
-
     @RequestMapping(value = "/hello", method = {GET, POST})
     public String hello(HttpServletRequest request){
         log.info("hello spring  - {}", request.getMethod());
