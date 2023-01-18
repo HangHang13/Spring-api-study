@@ -1,5 +1,6 @@
 package com.example.apibasic.post.dto;
 
+import com.example.apibasic.post.entity.HashTagEntity;
 import com.example.apibasic.post.entity.PostEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
@@ -7,6 +8,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Getter
@@ -35,7 +37,10 @@ public class PostResponseDTO {
         this.content = entity.get().getContent();
         this.title = entity.get().getTitle();
         this.regDate = entity.get().getCreateDate();
-        this.hashTags = entity.get().getHashTags();
+        this.hashTags = entity.get().getHashTags()
+                .stream()
+                .map(HashTagEntity::getTagName)
+                .collect(Collectors.toList());
     }
 
     public PostResponseDTO(PostEntity entity) {
@@ -43,6 +48,9 @@ public class PostResponseDTO {
         this.content = entity.getContent();
         this.title = entity.getTitle();
         this.regDate = entity.getCreateDate();
-        this.hashTags = entity.getHashTags();
+        this.hashTags = entity.getHashTags()
+                .stream()
+                .map(HashTagEntity::getTagName)
+                .collect(Collectors.toList());
     }
 }

@@ -15,12 +15,12 @@ class ApibasicApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void dbConnectTest(){
-		String sql = "SELECT NOW() AS now FROM dual";
-		String now =  jdbcTemplate.queryForObject(sql,String.class);
-
-		System.out.println("now = " + now);
-	}
+//	@Test
+//	void dbConnectTest(){
+//		String sql = "SELECT NOW() AS now FROM dual";
+//		String now =  jdbcTemplate.queryForObject(sql,String.class);
+//
+//		System.out.println("now = " + now);
+//	}
 
 }

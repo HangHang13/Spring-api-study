@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(of="postId")
 @Entity
-@Table(name="post")
+@Table(name="tbl_post")
 public class PostEntity {
 
     @Id
@@ -37,9 +37,11 @@ public class PostEntity {
 
     @Column(nullable = false, name="content")
     private String content; //내용
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Column(name="hashTags")
-    private List<String> hashTags = new ArrayList<String>(); // 해시태그 목록
+
+
+    //    @Column(name="hashTags")
+    @OneToMany(mappedBy = "post")
+    private List<HashTagEntity> hashTags = new ArrayList<>(); // 해시태그 목록
 
 
     @CreationTimestamp
@@ -52,11 +54,11 @@ public class PostEntity {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modifyDate; //수정시간
 
-    public void update(String title, String content, List<String> hashTags, String writer){
+    public void update(String title, String content, String writer, List<HashTagEntity> hashTags){
         this.title = title;
         this.content = content;
-        this.hashTags = hashTags;
         this.writer = writer;
+        this.hashTags =hashTags;
     }
 
 

@@ -22,15 +22,16 @@ public class ApibasicApplication {
 		SpringApplication.run(ApibasicApplication.class, args);
 	}
 
-	@PostConstruct
-	void test(){
-		for (int i = 1; i <= 500; i++) {
-			PostEntity post = PostEntity.builder()
-					.title("안녕~~" + i)
-					.writer("김말종" + i)
-					.content("아무말아무말아무말~~~" + i)
-					.build();
-			postRepository.save(post);
-	}
+//	@PostConstruct
+//	void test(){
+//		for (int i = 1; i <= 500; i++) {
+//			PostEntity post = PostEntity.builder()
+//					.title("안녕~~" + i)
+//					.writer("김말종" + i)
+//					.content("아무말아무말아무말~~~" + i)
+//					.build();
+//			postRepository.save(post);
+//	}
+//	}
+}
 
-}}

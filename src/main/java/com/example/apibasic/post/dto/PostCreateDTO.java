@@ -1,6 +1,7 @@
 package com.example.apibasic.post.dto;
 
 
+import com.example.apibasic.post.entity.HashTagEntity;
 import com.example.apibasic.post.entity.PostEntity;
 import lombok.*;
 
@@ -43,7 +44,7 @@ public class PostCreateDTO {
                 .title(this.title)
                 .writer(this.writer)
                 .content(this.content)
-                .hashTags(this.hashTags)
+//                .hashTags(this.hashTags)
                 .createDate(LocalDateTime.now())
                 .build();
     }

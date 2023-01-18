@@ -1,5 +1,6 @@
 package com.example.apibasic.post.dto;
 
+import com.example.apibasic.post.entity.HashTagEntity;
 import com.example.apibasic.post.entity.PostEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
@@ -22,7 +23,7 @@ public class PostFindOneResDTO {
     private String title;
     private String content;
 
-    private List<String> hashTags;
+    private List<HashTagEntity> hashTags;
 
     @JsonFormat(pattern = "yyyy/MM/DD")
     private LocalDateTime createDate;
